@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <link rel="stylesheet" href="./styles/comment.css">
+    <style>
+       
+
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1 class="main-title">Checkout Comments</h1>
+    <section id="comment-world">
+        <div class="comment-container">
+            <h4 class="comment-author">Robiul Hakim</h4>
+            <small class="comment-time">10 days ago</small>
+            <p class="comment-text">One we used to talk with friends in Facebook in comments section. Now-a-days people used to check comment box comments to have some fun or to know whats the problem in this post.</p>
+        </div>
+    </section>
+    <section>
+        <textarea placeholder="Write your comment" class="comment-text-box" name="" id="comment-text-box" cols="30" rows="10"  ></textarea>
+        <button class="comment-btn" id="comment-btn">Comment</button>
+    </section>
+    </main>
+    <script>
+        document.getElementById('comment-btn').addEventListener('click', function (){
+            const commentTextBox = document.getElementById('comment-text-box');
+            const commentText = commentTextBox.value;
+            const commentWorld = document.getElementById('comment-world');
+            
+            const newComment = document.createElement('section');
+            newComment.innerHTML = `
+            <div class="comment-container">
+                <h4 class="comment-author">Robiul Hakim</h4>
+                <small class="comment-time">10 days ago</small>
+                <p class="comment-text"> ${commentText}.</p>
+            </div>
+            `;
+            commentWorld.append(newComment);
+            commentTextBox.value = '';
+        })
+    </script>
+    <script src="./js/comment.js"></script>
+</body>
+</html>
